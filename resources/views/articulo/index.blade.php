@@ -1,9 +1,13 @@
-@extends('layouts.plantillaBase')
-@section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
-@endsection
-@section('contenido')
-<a href="articulos/create" class="btn btn-primary">Crear</a>
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+@section('content')
+<a href="articulos/create" class="btn btn-primary mb-3">Crear</a>
 
 
 <table id="articulos" class="table table-dark table-striped">
@@ -40,8 +44,16 @@
     @endforeach
     </tbody>
 </table>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
+@stop
+
 @section('js')
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script> console.log('Hi!'); </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
 <script>
@@ -49,6 +61,4 @@ $(document).ready(function() {
     $('#articulos').DataTable();
 } );
 </script>
-@endsection
-
-@endsection
+@stop
